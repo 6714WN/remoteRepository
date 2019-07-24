@@ -29,9 +29,7 @@ CREATE TABLE #D_Date
   [Jour 1 année]  AS CONVERT(DATE, DATEADD(YEAR,  DATEDIFF(YEAR, 0, [Date]), 0)),
   [Date Style 112]     AS CONVERT(CHAR(8), [Date], 112),
   [Date Style 111]     AS CONVERT(CHAR(10), [Date], 101), 
-  [Date Style 103]     AS CONVERT(CHAR(10), [Date], 103),
-  -- Mois Année
-  [Mois Année]  AS 100*YEAR([date])+MONTH([Date])
+  [Date Style 103]     AS CONVERT(CHAR(10), [Date], 103) 
 );
 --
 INSERT #D_Date([Date]) 
