@@ -23,13 +23,7 @@ CREATE TABLE #D_Date
   -- Mois
   [Mois] AS DATEPART(MONTH, [Date]),
   [Jour 1 mois] AS CONVERT(DATE, DATEADD(MONTH, DATEDIFF(MONTH, 0, [Date]), 0)),
-  [Libellé mois] AS DATENAME(MONTH, [Date]),
-  -- Année
-  [Année]       AS DATEPART(YEAR, [Date]),
-  [Jour 1 année]  AS CONVERT(DATE, DATEADD(YEAR,  DATEDIFF(YEAR, 0, [Date]), 0)),
-  [Date Style 112]     AS CONVERT(CHAR(8), [Date], 112),
-  [Date Style 111]     AS CONVERT(CHAR(10), [Date], 101), 
-  [Date Style 103]     AS CONVERT(CHAR(10), [Date], 103)
+  [Libellé mois] AS DATENAME(MONTH, [Date]) 
 );
 --
 INSERT #D_Date([Date]) 
